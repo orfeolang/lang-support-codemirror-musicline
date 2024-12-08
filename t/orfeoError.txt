@@ -8,8 +8,8 @@ You must write a marker name after the marker sigil ｢@｣.
 ==>
 
 Program(
-    ErrorMessageMarker,
-    CodeLineIndicator, ErrorEjectIcon
+    ErrorHeader,
+    ErrorLineCursor, ErrorIconEjectPoint
 )
 
 # With Sequence Start Icon Until EOL ---------------------------------
@@ -22,8 +22,8 @@ The note container opened at 1:1 is not closed.
 ==>
 
 Program(
-    ErrorMessageMarker,
-    CodeLineIndicator, ErrorSequenceStartIcon
+    ErrorHeader,
+    ErrorLineCursor, ErrorIconSequenceStart
 )
 
 # With Sequence Start Icon Until EOF ---------------------------------
@@ -36,6 +36,6 @@ The block comment opened at 1:1 is not closed.
 ==>
 
 Program(
-    ErrorMessageMarker,
-    CodeLineIndicator, ErrorSequenceStartIcon
+    ErrorHeader,
+    ErrorLineCursor, ErrorIconSequenceStart
 )

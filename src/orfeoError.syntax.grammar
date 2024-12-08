@@ -8,14 +8,15 @@ errorMessage {
 }
 
 location {
-    ErrorMessageMarker
+    ErrorHeader
     anyChars?
     newline
 }
 
 codeLine {
-    CodeLineIndicator
-    anyCharsButIcons? ( ErrorEjectIcon | ErrorSequenceStartIcon )
+    ErrorLineCursor
+    anyCharsButIcons?
+    ( ErrorIconEjectPoint | ErrorIconSequenceStart )
     anyChars?
     newline
 }
@@ -25,10 +26,10 @@ message {
 }
 
 @tokens {
-    ErrorMessageMarker     { '===OOPS!===' }
-    CodeLineIndicator      { @digit+ '➤' }
-    ErrorEjectIcon         { '⏏' }
-    ErrorSequenceStartIcon { '⭢' }
+    ErrorHeader            { '===OOPS!===' }
+    ErrorLineCursor        { @digit+ '➤' }
+    ErrorIconEjectPoint    { '⏏' }
+    ErrorIconSequenceStart { '⭢' }
     anyCharsButIcons       { ![⏏⭢]+ }
     anyChars               { ![\n]+ }
     newline                { '\n' }
